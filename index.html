@@ -12,11 +12,20 @@
       <p>Shoot!</p>
     </header>
 
+    <span class="goal">First to 3 wins</span>
+
     <div class="score">
-      <span>First to 3 wins</span>
-      <div id="user-label">You:</div>
-      <div id="cpu-label">CPU:</div>
-      <span id="user-score">0</span>:<span id="cpu-score">0</span>
+      <div id="player">
+        <h1>You</h1>
+        <h2 id="user-score">0</h2>
+      </div>
+      <div class="vs">
+        <img src="/images/vs.png" alt="versus against fists">
+      </div>
+      <div id="cpu">
+        <h1>CPU</h1>
+        <h2 id="cpu-score">0</h2>
+      </div>
     </div>
 
     <div class="choices">
@@ -29,7 +38,6 @@
       <div id="s" class="choose">
         <img src="images/scissor.png" alt="rock">
       </div>
-
     </div>
     <script src="rps.js"></script>
   </body>
