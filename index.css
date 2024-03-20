@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Margarine&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Margarine", sans-serif;
+  background-color: rgb(219, 219, 186);
+}
+/* rgb(50, 119, 119) rgb(85, 119, 119)*/
+/* header */
+header {
+  padding: 20px;
+  text-align: center;
+
+}
+
+header > h1 {
+  color:rgb(119, 167, 167);
+  font-size: 80px;
+}
+
+header > p {
+  font-size: 50px;
+  color:rgb(119, 167, 167);
+}
+
+/* score */
+.score {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.score > span {
+  font-size: 35px;
+}
+
+
+
