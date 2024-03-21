@@ -1,3 +1,7 @@
+let playerScore = 0;
+let cpuScore = 0;
+let maxScore = 3;
+
 
 const getComputerChoice = () => {
   const RPS = ['rock', 'paper', 'scissors'];
