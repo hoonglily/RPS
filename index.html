@@ -7,40 +7,42 @@
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <header>
-      <h1>Rock Paper Scissors</h1>
-      <p>Shoot!</p>
-    </header>
-
-    <span class="goal">First to 5 wins</span>
-
-    <div class="score">
-      <div id="player">
-        <h1>You</h1>
-        <h2 id="user-score">0</h2>
+    <div class="container">
+      <header>
+        <h1>Rock Paper Scissors</h1>
+        <p>Shoot!</p>
+      </header>
+  
+      <span class="goal">First to 5 wins</span>
+  
+      <div class="score">
+        <div id="player">
+          <h1>You</h1>
+          <h2 id="user-score">0</h2>
+        </div>
+        <div class="vs">
+          <img src="/images/vs.png" alt="versus against fists">
+        </div>
+        <div id="cpu">
+          <h1>CPU</h1>
+          <h2 id="cpu-score">0</h2>
+        </div>
       </div>
-      <div class="vs">
-        <img src="/images/vs.png" alt="versus against fists">
+  
+      <div id="choices">
+        <div id="rock" class="choose">
+          <img src="images/rock.png" alt="rock">
+        </div>
+        <div id="paper" class="choose">
+          <img src="images/paper.png" alt="paper">
+        </div>
+        <div id="scissors" class="choose">
+          <img src="images/scissor.png" alt="scissor">
+        </div>
       </div>
-      <div id="cpu">
-        <h1>CPU</h1>
-        <h2 id="cpu-score">0</h2>
-      </div>
+  
+      <button id="restart">Reset</button>
+      <script src="rps.js"></script>
     </div>
-
-    <div id="choices">
-      <div id="rock" class="choose">
-        <img src="images/rock.png" alt="rock">
-      </div>
-      <div id="paper" class="choose">
-        <img src="images/paper.png" alt="paper">
-      </div>
-      <div id="scissors" class="choose">
-        <img src="images/scissor.png" alt="scissor">
-      </div>
-    </div>
-
-    <button id="restart">Reset</button>
-    <script src="rps.js"></script>
   </body>
 </html>

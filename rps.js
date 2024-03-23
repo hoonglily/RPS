@@ -1,12 +1,17 @@
-let playerScore = 0;
-let computerScore = 0;
-let winningScore = 5;
+const userScore = document.querySelector("#player");
+const cpuScore = document.querySelector("#cpu");
+const totalUserScore = document.querySelector("#user-score")
+const totalCpuScore = document.querySelector("#cpu-score")
 
 const getComputerChoice = () => {
   const RPS = ['rock', 'paper', 'scissors'];
   const randomRPS = Math.floor(Math.random() * RPS.length);
   return RPS[randomRPS];
 };
+
+let playerScore = 0;
+let computerScore = 0;
+let winningScore = 5;
 
 const playRound = (playerSelection) => {
   const lowerCasePS = playerSelection.toLowerCase();
@@ -33,8 +38,11 @@ const playRound = (playerSelection) => {
   } else if (computerScore === winningScore) {
     console.log("Computer won the Game!");
   };
-  console.log(playerScore, computerScore);
-
+  
+  totalUserScore.textContent = playerScore;
+  totalCpuScore.textContent = computerScore;
+  cpuScore.appendChild(totalCpuScore);
+  userScore.appendChild(totalUserScore);
 };
 
 const choices = document.querySelectorAll(".choose");
