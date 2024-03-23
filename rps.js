@@ -1,7 +1,6 @@
 let playerScore = 0;
-let cpuScore = 0;
-let maxScore = 3;
-
+let computerScore = 0;
+let winningScore = 5;
 
 const getComputerChoice = () => {
   const RPS = ['rock', 'paper', 'scissors'];
@@ -9,8 +8,9 @@ const getComputerChoice = () => {
   return RPS[randomRPS];
 };
 
-const playRound = (playerSelection, computerSelection) => {
+const playRound = (playerSelection) => {
   const lowerCasePS = playerSelection.toLowerCase();
+  const computerSelection = getComputerChoice();
 
   const outcomes = {
     rock: { beats: 'scissors', message: 'Rock beats Scissors' },
@@ -19,15 +19,33 @@ const playRound = (playerSelection, computerSelection) => {
   };
 
   if (lowerCasePS === computerSelection) {
-    return 'Tie! Please go again';
+    console.log('Tie! Please go again');
   } else if (outcomes[lowerCasePS].beats === computerSelection){
-    return `You win! ${outcomes[lowerCasePS].message}`;
+    console.log(`You win! ${outcomes[lowerCasePS].message}`);
+    playerScore++;
   } else {
-    return `You Lose! ${outcomes[computerSelection].message}`;
-  }   
+    console.log(`You Lose! ${outcomes[computerSelection].message}`);
+    computerScore++;
+  };
+  
+  if (playerScore === winningScore) {
+    console.log("You won the Game!");
+  } else if (computerScore === winningScore) {
+    console.log("Computer won the Game!");
+  };
+  console.log(playerScore, computerScore);
+
 };
 
-const playerSelection = 'scissors';
-const computerSelection = getComputerChoice();
-console.log('CPU:', computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+const choices = document.querySelectorAll(".choose");
+
+const playGame = () => {
+  choices.forEach(choice => {
+    choice.addEventListener("click", () => {
+      const playerSelection = choice.id;
+      playRound(playerSelection);
+    });
+  });
+};
+
+playGame();

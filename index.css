@@ -48,14 +48,14 @@ header > p {
 }
 
 /* choices */
-.choices {
+#choices {
   padding: 20px;
   margin: 30px;
   display: flex;
   justify-content: space-evenly;
 }
 
-.choices .choose img {
+#choices .choose img {
   width: 100px;
   height: 100px;
 }
