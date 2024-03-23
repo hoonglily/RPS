@@ -8,7 +8,7 @@ const message = document.querySelector(".message");
 const winningMsg = document.querySelector(".winning-msg");
 
 const choices = document.querySelectorAll(".choose");
-const restart = document.querySelectorAll("#restart");
+const restart = document.querySelector("#restart");
 
 
 const getComputerChoice = () => {
@@ -71,12 +71,15 @@ const playGame = () => {
 };
 
 restart.addEventListener("click", () => {
-  console.log('game restarted')
-  // restartGame();
+  restartGame();
 });
 
 const restartGame = () => {
-  
+  totalUserScore.textContent = 0;
+  totalCpuScore.textContent = 0;
+  message.textContent = '';
+  playerScore = 0;
+  computerScore = 0;
 };
 
 playGame();
