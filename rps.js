@@ -1,7 +1,15 @@
 const userScore = document.querySelector("#player");
 const cpuScore = document.querySelector("#cpu");
-const totalUserScore = document.querySelector("#user-score")
-const totalCpuScore = document.querySelector("#cpu-score")
+const totalUserScore = document.querySelector("#user-score");
+const totalCpuScore = document.querySelector("#cpu-score");
+
+const msgContainer = document.querySelector(".msg-container");
+const message = document.querySelector(".message");
+const winningMsg = document.querySelector(".winning-msg");
+
+const choices = document.querySelectorAll(".choose");
+const restart = document.querySelectorAll("#restart");
+
 
 const getComputerChoice = () => {
   const RPS = ['rock', 'paper', 'scissors'];
@@ -17,6 +25,8 @@ const playRound = (playerSelection) => {
   const lowerCasePS = playerSelection.toLowerCase();
   const computerSelection = getComputerChoice();
 
+  let resultMessage;
+
   const outcomes = {
     rock: { beats: 'scissors', message: 'Rock beats Scissors' },
     paper: { beats: 'rock', message: 'Paper beats Rock' },
@@ -24,28 +34,32 @@ const playRound = (playerSelection) => {
   };
 
   if (lowerCasePS === computerSelection) {
-    console.log('Tie! Please go again');
+    resultMessage = 'Tie! Please go again';
   } else if (outcomes[lowerCasePS].beats === computerSelection){
-    console.log(`You win! ${outcomes[lowerCasePS].message}`);
+    resultMessage = `You win! ${outcomes[lowerCasePS].message}`;
     playerScore++;
   } else {
-    console.log(`You Lose! ${outcomes[computerSelection].message}`);
+    resultMessage = `You Lose! ${outcomes[computerSelection].message}`;
     computerScore++;
   };
-  
+
+  message.textContent = resultMessage;
+  msgContainer.appendChild(message);
+
   if (playerScore === winningScore) {
-    console.log("You won the Game!");
+    message.textContent = "You won the Game!";
   } else if (computerScore === winningScore) {
-    console.log("Computer won the Game!");
+    message.textContent = "Computer won the Game!";
   };
-  
+
   totalUserScore.textContent = playerScore;
   totalCpuScore.textContent = computerScore;
   cpuScore.appendChild(totalCpuScore);
   userScore.appendChild(totalUserScore);
-};
 
-const choices = document.querySelectorAll(".choose");
+  msgContainer.appendChild(message);
+
+};
 
 const playGame = () => {
   choices.forEach(choice => {
@@ -54,6 +68,15 @@ const playGame = () => {
       playRound(playerSelection);
     });
   });
+};
+
+restart.addEventListener("click", () => {
+  console.log('game restarted')
+  // restartGame();
+});
+
+const restartGame = () => {
+  
 };
 
 playGame();
