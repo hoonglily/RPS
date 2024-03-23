@@ -4,8 +4,8 @@ const totalUserScore = document.querySelector("#user-score");
 const totalCpuScore = document.querySelector("#cpu-score");
 
 const msgContainer = document.querySelector(".msg-container");
-const message = document.querySelector(".message");
-const winningMsg = document.querySelector(".winning-msg");
+const message = document.querySelector("#message");
+const winningMsg = document.querySelector("#winning-msg");
 
 const choices = document.querySelectorAll(".choose");
 const restart = document.querySelector("#restart");
@@ -48,8 +48,10 @@ const playRound = (playerSelection) => {
 
   if (playerScore === winningScore) {
     message.textContent = "You won the Game!";
+    message.style.color = 'red';
   } else if (computerScore === winningScore) {
     message.textContent = "Computer won the Game!";
+    message.style.color = 'red';
   };
 
   totalUserScore.textContent = playerScore;
@@ -78,6 +80,7 @@ const restartGame = () => {
   totalUserScore.textContent = 0;
   totalCpuScore.textContent = 0;
   message.textContent = '';
+  message.style.color = 'rgb(119, 167, 167)';
   playerScore = 0;
   computerScore = 0;
 };

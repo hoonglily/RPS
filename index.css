@@ -48,14 +48,14 @@ header > p {
 }
 
 /* winning message */
-.msg-container {
-  padding: 15px;  
+#message {
+  padding: 10px;
+  font-size: 35px;
   color:rgb(119, 167, 167);
 }
 
 /* choices */
 #choices {
-  padding: 20px;
   margin: 30px;
   display: flex;
   justify-content: space-evenly;
