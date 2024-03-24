@@ -21,7 +21,6 @@ const getComputerChoice = () => {
 };
 
 const playRound = (playerSelection) => {
-  const lowerCasePS = playerSelection.toLowerCase();
   const computerSelection = getComputerChoice();
 
   let resultMessage;
@@ -32,10 +31,10 @@ const playRound = (playerSelection) => {
     scissors: { beats: 'paper', message: 'Scissors beats Paper' }
   };
 
-  if (lowerCasePS === computerSelection) {
+  if (playerSelection === computerSelection) {
     resultMessage = 'Tie! Please go again';
-  } else if (outcomes[lowerCasePS].beats === computerSelection){
-    resultMessage = `You win! ${outcomes[lowerCasePS].message}`;
+  } else if (outcomes[playerSelection].beats === computerSelection){
+    resultMessage = `You win! ${outcomes[playerSelection].message}`;
     playerScore++;
   } else {
     resultMessage = `You Lose! ${outcomes[computerSelection].message}`;
