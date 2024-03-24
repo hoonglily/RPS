@@ -10,7 +10,6 @@ const winningMsg = document.querySelector("#winning-msg");
 const choices = document.querySelectorAll(".choose");
 const restart = document.querySelector("#restart");
 
-
 const getComputerChoice = () => {
   const RPS = ['rock', 'paper', 'scissors'];
   const randomRPS = Math.floor(Math.random() * RPS.length);
@@ -58,7 +57,6 @@ const playRound = (playerSelection) => {
   totalCpuScore.textContent = computerScore;
   cpuScore.appendChild(totalCpuScore);
   userScore.appendChild(totalUserScore);
-
   msgContainer.appendChild(message);
 
 };
@@ -66,6 +64,10 @@ const playRound = (playerSelection) => {
 const playGame = () => {
   choices.forEach(choice => {
     choice.addEventListener("click", () => {
+      if (playerScore === winningScore || computerScore === winningScore) {
+        endGame();
+      };
+      
       const playerSelection = choice.id;
       playRound(playerSelection);
     });
@@ -73,10 +75,10 @@ const playGame = () => {
 };
 
 restart.addEventListener("click", () => {
-  restartGame();
+  endGame();
 });
 
-const restartGame = () => {
+const endGame = () => {
   totalUserScore.textContent = 0;
   totalCpuScore.textContent = 0;
   message.textContent = '';
@@ -84,5 +86,6 @@ const restartGame = () => {
   playerScore = 0;
   computerScore = 0;
 };
+
 
 playGame();
