@@ -1,24 +1,24 @@
+// DOM Elements
 const userScore = document.querySelector("#player");
 const cpuScore = document.querySelector("#cpu");
 const totalUserScore = document.querySelector("#user-score");
 const totalCpuScore = document.querySelector("#cpu-score");
-
 const msgContainer = document.querySelector(".msg-container");
 const message = document.querySelector("#message");
 const winningMsg = document.querySelector("#winning-msg");
-
 const choices = document.querySelectorAll(".choose");
 const restart = document.querySelector("#restart");
 
+let playerScore = 0;
+let computerScore = 0;
+let winningScore = 5;
+
+// Getting randomized CPU choice
 const getComputerChoice = () => {
   const RPS = ['rock', 'paper', 'scissors'];
   const randomRPS = Math.floor(Math.random() * RPS.length);
   return RPS[randomRPS];
 };
-
-let playerScore = 0;
-let computerScore = 0;
-let winningScore = 5;
 
 const playRound = (playerSelection) => {
   const lowerCasePS = playerSelection.toLowerCase();
@@ -61,6 +61,21 @@ const playRound = (playerSelection) => {
 
 };
 
+// Restarts or ends game 
+const endGame = () => {
+  totalUserScore.textContent = 0;
+  totalCpuScore.textContent = 0;
+  message.textContent = '';
+  message.style.color = 'rgb(119, 167, 167)';
+  playerScore = 0;
+  computerScore = 0;
+};
+
+restart.addEventListener("click", () => {
+  endGame();
+});
+
+// Start game
 const playGame = () => {
   choices.forEach(choice => {
     choice.addEventListener("click", () => {
@@ -73,19 +88,5 @@ const playGame = () => {
     });
   });
 };
-
-restart.addEventListener("click", () => {
-  endGame();
-});
-
-const endGame = () => {
-  totalUserScore.textContent = 0;
-  totalCpuScore.textContent = 0;
-  message.textContent = '';
-  message.style.color = 'rgb(119, 167, 167)';
-  playerScore = 0;
-  computerScore = 0;
-};
-
 
 playGame();

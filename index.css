@@ -9,7 +9,7 @@
   background-color: rgb(228, 228, 206);
 }
 
-/* header */
+/* Header Style */
 header {
   padding: 20px;
   margin-bottom: 90px;
@@ -25,7 +25,7 @@ header > p {
   color:rgb(119, 167, 167);
 }
 
-/* score */
+/* Score Style */
 .goal {
   font-size: 35px;
 }
@@ -47,14 +47,14 @@ header > p {
   height: 80px;
 }
 
-/* winning message */
+/* Winning Message Style */
 #message {
   padding: 10px;
   font-size: 35px;
   color:rgb(119, 167, 167);
 }
 
-/* choices */
+/* Choices Style */
 #choices {
   margin: 30px;
   display: flex;
@@ -67,7 +67,7 @@ header > p {
   cursor: grab;
 }
 
-/* restart */
+/* Restart Style */
 #restart {
   margin-top: 30px;
   border: none;
@@ -80,6 +80,7 @@ header > p {
   color: red;
 }
 
+/* Media Queries */
 @media (max-width: 600px) {
   header > h1 {
     font-size: 50px;
